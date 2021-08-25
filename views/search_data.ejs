@@ -1,0 +1,30 @@
+<%- include("./components/header"); -%>
+
+    <div class="search w-1 m-auto s-country">
+        <form action="/search" method="POST">
+            <input  class="search-input s-inp" type="text" name="inputText" placeholder="Country..." onfocus="this.placeholder =''" onblur="this.placeholder='Country...'">
+            <input class="search-btn" type="submit">
+        </form>
+    </div>
+
+    <% CountryInfo.forEach(country =>{ %>
+        <div class="country-box w-1 m-auto">
+        <div class="country-data">
+            <h1><%= country.name %></h1>
+            <p><span>Capital:&nbsp; </span>  <%= country.capital %> </p>
+            <p><span>Also Known:&nbsp; </span>  <%= country.alsoKnown %></p>
+            <p><span>Region: &nbsp; </span> <%= country.reagion %> </p>
+            <p><span>Papulation: &nbsp; </span>  <%= country.papulation %></p>
+            <p><span>Area: &nbsp; </span>  <%= country.area %> Square Km</p>
+            <p><span>Timezone: &nbsp; </span>  <%= country.time %> </p>
+            <p><span>Languages: &nbsp; </span>  <%= country.language %></p>
+            <p><span>Neighbouring Countrys: &nbsp; </span>  <%= country.border %></p>
+        </div>
+        <div class="country-image">
+            <img src=<%= country.flagURL %> alt="flag">
+            <p>flage of <%= country.name %></p>
+        </div>
+    </div>
+    <% }); %>
+
+ <%- include("./components/footer"); -%>

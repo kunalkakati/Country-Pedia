@@ -1,0 +1,10 @@
+<%- include("./components/header"); -%>
+
+    <div class="search w-1 m-auto s-country">
+        <form action="/search" method="POST">
+            <input  class="search-input s-inp" type="text" name="inputText" placeholder="Country..." onfocus="this.placeholder =''" onblur="this.placeholder='Country...'">
+            <input class="search-btn" type="submit">
+        </form>
+    </div>
+
+ <%- include("./components/footer"); -%>
